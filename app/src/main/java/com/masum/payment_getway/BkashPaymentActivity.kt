@@ -38,7 +38,7 @@ class BkashPaymentActivity : AppCompatActivity() {
 
         // url = intent.getStringExtra("url")!!.toString()
         val request =
-            BkashPaymentRequest(intent.getStringExtra("amount"), intent.getStringExtra("intent"))
+            BkashPaymentRequest("1000", "authorization")
         paymentRequest = "{paymentRequest:${Gson().toJson(request)}}"
 
         initBkashWebView()
@@ -84,7 +84,7 @@ class BkashPaymentActivity : AppCompatActivity() {
                 "AndroidNative"
             )
             //Get Url via Intent
-            loadUrl("https://www.bkash.com")
+            loadUrl("file:///android_asset/www/checkout_120.html")
 
         }
     }
